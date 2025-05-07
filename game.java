@@ -1,17 +1,26 @@
 import java.util.*;
 
 public class WordGuessGame {
-    private static Set<String> words = new HashSet<>(Arrays.asList("apple", "banana", "cherry"));
+    private static ArrayList<String> words = new ArrayList<>(Arrays.asList("apple", "banana", "cherry"));
     private static int score = 0;
 
+    private static String getRank(int score) {
+        if (score >= 30) {
+            return "최고 등급";
+        } else if (score >= 20) {
+            return "중간 등급";
+        } else {
+            return "초보자 등급";
+        }
+    }
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("게임 설정 완료!");
+        System.out.println("rkqtdmf dlqfurgktpdy");
 
         while (!words.isEmpty()) {
-            System.out.println("위치를 입력하세요 (예: apple, banana, cherry): ");
-            String input = scanner.nextLine().trim().toLowerCase();
+            System.out.println("위치를 입력하세요);
+            String input = scanner.nextLine();
 
             if (words.contains(input)) {
                 System.out.println("참! 맞았습니다.");
@@ -33,13 +42,5 @@ public class WordGuessGame {
         System.out.println("게임 종료.");
     }
 
-    private static String getRank(int score) {
-        if (score >= 30) {
-            return "최고 등급";
-        } else if (score >= 20) {
-            return "중간 등급";
-        } else {
-            return "초보자 등급";
-        }
-    }
+    
 }
